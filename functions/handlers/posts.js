@@ -21,16 +21,14 @@ exports.getAllPosts = (req, res) => {
 }
 
 exports.makeOnePost = (req, res) => {
-  console.log(req.body.description);
-  const np = JSON.parse(req.body);
-  console.log(np.postTitle);
+  console.log(req.body);
   const newPost = {
     postUser: 'randomUser', // TODO: get user that's signed in ID
     receiveUser: '',
     comments: [],
     status: 'Incomplete',
-    postTitle: np.postTitle,
-    description: np.description,
+    postTitle: req.body.postTitle,
+    description: req.body.description,
   };
   postsDB
     .add(newPost)

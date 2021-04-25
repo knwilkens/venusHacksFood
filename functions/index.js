@@ -2,17 +2,22 @@
 const functions = require("firebase-functions");
 // app
 const express = require('express'),
-app = express(),
-bodyParser = require('body-parser');
+app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// front end link
+app.set('view engine', 'ejs');
+app.set('views', '../public'); // for render 
 
 // handlers
 const { getAllPosts, makeOnePost } = require('./handlers/posts');
 
 app.get('/view-posts', getAllPosts);
+app.get('/post', (req, res) => {
+  res.render('make-post');
+})
 app.post('/post', makeOnePost);
 
 // // Create and Deploy Your First Cloud Functions
