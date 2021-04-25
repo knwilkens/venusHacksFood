@@ -16,9 +16,9 @@ app.set('view engine', 'ejs');
 app.set('views', '../public'); // for render 
 
 // Router
-const { getAllPosts, makeOnePost, getPosts, updatePostStatusById } = require('./handlers/posts');
+const { getAllPosts, makeOnePost, getPosts, updatePostStatusById, getMyPosts } = require('./handlers/posts');
 
-app.get('/home', getAllPosts);
+//app.get('/home', getAllPosts);
 
 
 app.get('/login', (req, res) => {
@@ -34,6 +34,8 @@ app.get('/view-all-posts', getAllPosts);
 // endpoint --> http://localhost:5001/venushacksfood/us-central1/api/view-posts/:limit
 // example --> /view-posts/10 --> returns 10 posts
 app.get('/view-posts/:limit', getPosts);
+
+app.get('/my-posts/:user', getMyPosts);
 
 // Requests posts where limit equals the number of posts requested
 // endpoint --> http://localhost:5001/venushacksfood/us-central1/api/update-status-by-id/:id
