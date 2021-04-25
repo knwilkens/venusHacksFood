@@ -34,21 +34,8 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <script type="text/javascript" src="/main.js">
-    
-    </script>
 
   </head>
-
-  <script>
-    window.onload = () => {
-      if (console.log(localStorage.getItem("user")) === null){
-        window.location.replace("/log-in.html");
-      }
-      Feed.loadFeed();
-    }
-  </script>
-
   <body>
     
     <div class="header">
@@ -58,8 +45,7 @@
         </div>
         
         <ul class="navigation">
-          <a href="/make-post.ejs"><li>Make Post</li></a>
-          <a href="/log-in.html"><li><span class="material-icons">account_circle</span></li></a>
+          <a><li><span class="material-icons">account_circle</span></li></a>
         </ul>
       </div>
     </div>
@@ -78,20 +64,58 @@
         </div>
 
         <!-- This is the grid with the cards that show the food! -->
-
-        <div class='container'>
-          <div class='row' id="main-row">
-            
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card" style="width: 300px;">
+                <img src="https://www.almanac.com/sites/default/files/image_nodes/carrots-table_popidar-ss.jpg" class="card-img-top" alt="Carrots">
+                <div class="card-body">
+                  <p class="card-title">5 Bags of Carrots</p>
+                  <p class="card-text">Fresh carrots I grew in my backyard!</p>
+                  <p class="card-title">Time pick up range</p>
+                  <p class="card-text">10:00 am - 8:00 pm</p>
+                  <p class="card-title">Pick up location</p>
+                  <p class="card-text">Student Life Centre</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card" style="width: 300px;">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/are-potatoes-healthy-1570222022.jpg?crop=1.00xw:0.752xh;0.00160xw,0.248xh&resize=1200:*" class="card-img-top" alt="Potatoes">
+                <div class="card-body">
+                  <p class="card-title">5 Bags of Carrots</p>
+                  <p class="card-text">Fresh carrots I grew in my backyard!</p>
+                  <p class="card-title">Time pick up range</p>
+                  <p class="card-text">10:00 am - 8:00 pm</p>
+                  <p class="card-title">Pick up location</p>
+                  <p class="card-text">Student Life Centre</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card" style="width: 300px;">
+                <img src="https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2012/8/14/0/0125629_03_chicken-in-skillet_s4x3.jpg.rend.hgtvcom.616.462.suffix/1366236434003.jpeg" class="card-img-top" alt="Chicken">
+                <div class="card-body">
+                  <p class="card-title">5 Bags of Carrots</p>
+                  <p class="card-text">Fresh carrots I grew in my backyard!</p>
+                  <p class="card-title">Time pick up range</p>
+                  <p class="card-text">10:00 am - 8:00 pm</p>
+                  <p class="card-title">Pick up location</p>
+                  <p class="card-text">Student Life Centre</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!--
     <p id="load">Firebase SDK Loading&hellip;</p>
 
-    
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const loadEl = document.querySelector('#load');
@@ -131,6 +155,5 @@
         }
       });
     </script>
-  -->
   </body>
 </html>

@@ -88,7 +88,7 @@ body{
 .my_posts_container{
     float: right;
     height: 100%;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     color: #39AEA9;
 }
 
@@ -103,10 +103,13 @@ body{
 }
 
 .btn-primary{
-    width: 80px;
-    height: 32px;
     left: 196px;
     top: 344px;
     background-color: #39AEA9;
     color: white;
+}
+
+/* Row fix wft */
+.row{
+    width: 100%;
 }
