@@ -62,3 +62,26 @@ body{
     display: table-cell;
     vertical-align: middle;
 }
+
+/* Body */
+
+.body_container{
+    margin: 10%;
+}
+
+/* Cards */
+
+.card{
+    background: #FFFFFF;
+    border: 1px solid #39AEA9;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0px #39AEA9;
+    border-radius: 8px;
+}
+
+.btn-primary{
+    width: 80px;
+    height: 32px;
+    left: 196px;
+    top: 344px;
+}
