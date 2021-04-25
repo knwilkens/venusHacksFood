@@ -9,7 +9,7 @@
 
 body{
     background-color: #FAF8F4;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .h1{
@@ -69,6 +69,29 @@ body{
     margin: 10%;
 }
 
+/* Title */
+
+.title_container{
+    height: 100%;
+    width: 100%;
+    display: table;
+    float: left;
+}
+
+.headline{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+}
+
+.my_posts_container{
+    float: right;
+    height: 100%;
+    padding: 0px 20px;
+    color: #39AEA9;
+}
+
 /* Cards */
 
 .card{
@@ -84,4 +107,6 @@ body{
     height: 32px;
     left: 196px;
     top: 344px;
+    background-color: #39AEA9;
+    color: white;
 }
