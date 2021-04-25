@@ -22,12 +22,12 @@ body{
     width: 100%;
     height: 80px;
     display: block;
-    background-color: white;
+    background-color: #39AEA9;
 }
 
 .inner_header{
-    width: 100p;
-    height: 100%;
+    width: 100%;
+    height: 78px;
     display: block;
     margin: 0 auto;
     background-color: white;
@@ -39,11 +39,10 @@ body{
     float: left;
 }
 
-.logo_container h1{
+.logo{
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    font-size: 32px;
 }
 
 .navigation{
@@ -96,12 +95,19 @@ body{
 
 .card{
     background: #FFFFFF;
+    height: 400px;
+    width: 300px;
     border: 1px solid #39AEA9;
     box-sizing: border-box;
     box-shadow: 4px 4px 0px #39AEA9;
     border-radius: 8px;
     font-size: 14px;
     line-height: 20px;
+}
+
+#new_post_card{
+    background: #EBF7F7;
+    color: #39AEA9;
 }
 
 .card-img-top{
@@ -119,11 +125,26 @@ body{
 }
 
 .btn-primary{
-    width: 80px;
-    height: 32px;
-    left: 196px;
-    top: 344px;
+    border-radius: 20px;
+    background-color: white;
+    color: #39AEA9;
+    border: 2px solid #39AEA9;
+    font-size: 14px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.btn-primary:hover {
     background-color: #39AEA9;
+    border: 2px solid #39AEA9;
     color: white;
-    float: right;
+  }
+
+/* Input Form */
+
+input[type=text]{
+    border: none;
+    background-color: white;
+    
 }
