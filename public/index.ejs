@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Spuddies | Food Sharing Service</title>
+    <title>VenusHacks Food</title>
 
     <!-- Import fonts from Google -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:400,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -33,19 +34,32 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script type="text/javascript" src="/main.js">
+    
+    </script>
 
   </head>
+
+  <script>
+    window.onload = () => {
+      if (console.log(localStorage.getItem("user")) === null){
+        window.location.replace("/log-in.html");
+      }
+      Feed.loadFeed();
+    }
+  </script>
+
   <body>
     
-    <!-- Header and Nav -->
     <div class="header">
       <div class="inner_header">
         <div class="logo_container">
-          <img src="Group 6.png" class="logo" alt="Spuddies">
+          <h1>Care-ot</h1>
         </div>
         
         <ul class="navigation">
-          <a href="log-in.html"><li><span class="material-icons">account_circle</span></li></a>
+          <a href="/make-post.ejs"><li>Make Post</li></a>
+          <a href="/log-in.html"><li><span class="material-icons">account_circle</span></li></a>
         </ul>
       </div>
     </div>
@@ -59,74 +73,25 @@
             <h1>Find and Reserve Food</h1>
           </div>
           <div class="my_posts_container">
-            <a href="make-post.ejs">My Posts</a>
+            <a>My Posts</a>
           </div>
         </div>
 
         <!-- This is the grid with the cards that show the food! -->
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <div class="card" id="new_post_card" style="width: 300px; height: 400px;">
-                <div class="card-body">
-                  <p>Have food to give away?</p>
-                  <h1>Make New Post</h1>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card" style="width: 300px; height: 400px;">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/are-potatoes-healthy-1570222022.jpg?crop=1.00xw:0.752xh;0.00160xw,0.248xh&resize=1200:*" class="card-img-top" alt="Potatoes">
-                <div class="card-body">
-                  <p class="card-title">5 Bags of Carrots</p>
-                  <p class="card-text">Fresh carrots I grew in my backyard!</p>
-                  <p class="card-title">Time pick up range</p>
-                  <p class="card-text">10:00 am - 8:00 pm</p>
-                  <p class="card-title">Pick up location</p>
-                  <p class="card-text">Student Life Centre</p>
-                  <a href="#" class="btn btn-primary">Reserve</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card" style="width: 300px; height: 400px;">
-                <img src="https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2012/8/14/0/0125629_03_chicken-in-skillet_s4x3.jpg.rend.hgtvcom.616.462.suffix/1366236434003.jpeg" class="card-img-top" alt="Chicken">
-                <div class="card-body">
-                  <p class="card-title">5 Bags of Carrots</p>
-                  <p class="card-text">Fresh carrots I grew in my backyard!</p>
-                  <p class="card-title">Time pick up range</p>
-                  <p class="card-text">10:00 am - 8:00 pm</p>
-                  <p class="card-title">Pick up location</p>
-                  <p class="card-text">Student Life Centre</p>
-                  <a href="#" class="btn btn-primary">Reserve</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            <div class="card" id="new_post_card" style="width: 300px; height: 400px;">
-              <div class="card-body">
-                <form method="post" action="http://localhost:5001/venushacksfood/us-central1/api/post">
-                  <div class="main-form"> 
-                    <h1 id="cardInfo">Make Your Post</h1> 
-                      Title: <input type="text" placeholder="Category: " name="postTitle"><br /><br /> 
-                      Description: <input type="text" placeholder="Enter Text here..." name="description">
-                    <a href="#" class="btn btn-primary">Submit</a>
-                  </div>
-                </form>
-              </div>
-            </div>
+
+        <div class='container'>
+          <div class='row' id="main-row">
+            
           </div>
         </div>
-
-        <!-- Overlay with Make Post Option -->
-        
 
       </div>
     </div>
 
+    <!--
     <p id="load">Firebase SDK Loading&hellip;</p>
 
+    
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const loadEl = document.querySelector('#load');
@@ -166,5 +131,6 @@
         }
       });
     </script>
+  -->
   </body>
 </html>

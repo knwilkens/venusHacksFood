@@ -12,6 +12,15 @@ body{
     font-family: 'Inter', sans-serif;
 }
 
+a{
+    color: #39AEA9;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #25726e;
+}
+
 .h1{
     font-weight: bold;
 }
@@ -88,6 +97,7 @@ body{
     float: right;
     height: 100%;
     padding: 0px 20px;
+    /* padding: 0px 20px; */
     color: #39AEA9;
 }
 
@@ -135,16 +145,54 @@ body{
     right: 15px;
 }
 
-.btn-primary:hover {
+.btn-primary:hover{
     background-color: #39AEA9;
     border: 2px solid #39AEA9;
     color: white;
-  }
+}
+
+/* Row fix wft */
+.row{
+    width: 100%;
+}
 
 /* Input Form */
 
 input[type=text]{
     border: none;
     background-color: white;
-    
+}
+
+input[type=password]{
+    border: none;
+    background-color: white;
+}
+
+/* Account form */
+
+button{
+    border-radius: 20px;
+    background-color: white;
+    color: #39AEA9;
+    border: 2px solid #39AEA9;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#quickstart-verify-email{
+    border-radius: 20px;
+    background-color: #FAF8F4;
+    color: #39AEA9;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#quickstart-password-reset{
+    border-radius: 20px;
+    background-color: #FAF8F4;
+    color: #39AEA9;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
 }
