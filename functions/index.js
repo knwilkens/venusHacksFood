@@ -3,6 +3,8 @@ const functions = require("firebase-functions");
 // app
 const express = require('express'),
 app = express();
+// render html files
+const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,8 +16,9 @@ app.set('views', '../public'); // for render
 // handlers
 const { getAllPosts, makeOnePost } = require('./handlers/posts');
 
-app.get('/home', (req, res) => {
-  res.render('index');
+app.get('/home', getAllPosts);
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname+'/../public/log-in.html'));
 })
 app.get('/view-posts', getAllPosts);
 app.get('/post', (req, res) => {
