@@ -9,10 +9,13 @@ exports.getAllPosts = (req, res) => {
       let posts = [];
       allPosts.forEach(doc => {
         posts.push({
+          postUser: doc.data().postUser,
           title: doc.data().title,
+          description: doc.data().description,
+          status: doc.data().status
         });
       });
-      res.json(posts);
+      res.render('index', {posts: posts});
     })
     .catch(err => {
       res.status(500).json({error: 'could not retrieve posts...'});
