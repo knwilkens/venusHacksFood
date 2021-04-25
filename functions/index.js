@@ -14,6 +14,9 @@ app.set('views', '../public'); // for render
 // handlers
 const { getAllPosts, makeOnePost } = require('./handlers/posts');
 
+app.get('/home', (req, res) => {
+  res.render('index');
+})
 app.get('/view-posts', getAllPosts);
 app.get('/post', (req, res) => {
   res.render('make-post');
