@@ -100,6 +100,22 @@ body{
     box-sizing: border-box;
     box-shadow: 4px 4px 0px #39AEA9;
     border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.card-img-top{
+    height: 160px;
+    object-fit:cover;
+    object-position: center;
+}
+
+.card-body{
+    margin: 5px;
+}
+
+.card-title{
+    font-weight: bold;
 }
 
 .btn-primary{
@@ -109,4 +125,5 @@ body{
     top: 344px;
     background-color: #39AEA9;
     color: white;
+    float: right;
 }
