@@ -111,7 +111,7 @@ exports.getPostById = (req, res) => {
 exports.makeOnePost = (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
   res.set("Access-Control-Allow-Headers", "Content-Type");
-
+  if(req.body.postUser===undefined) return res.status(500).json({error: "no user signed in!"})
   const newPost = {
     postUser: req.body.postUser,
     receiveUser: '',
