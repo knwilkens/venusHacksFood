@@ -8,7 +8,6 @@ exports.getAllPosts = (req, res) => {
     .then((allPosts) => {
       let posts = [];
       allPosts.forEach(doc => {
-        console.log("one doc");
         posts.push({
           title: doc.data().title,
         });
