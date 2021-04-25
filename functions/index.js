@@ -2,7 +2,12 @@
 const functions = require("firebase-functions");
 // app
 const express = require('express'),
-app = express();
+app = express(),
+bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.json());
 
 // handlers
 const { getAllPosts, makeOnePost } = require('./handlers/posts');

@@ -21,18 +21,21 @@ exports.getAllPosts = (req, res) => {
 }
 
 exports.makeOnePost = (req, res) => {
+  console.log(req.body.description);
+  const np = JSON.parse(req.body);
+  console.log(np.postTitle);
   const newPost = {
-    postUser: 'randomUser',
+    postUser: 'randomUser', // TODO: get user that's signed in ID
     receiveUser: '',
     comments: [],
     status: 'Incomplete',
-    title: 'Beets',
-    description: 'carrots',
+    postTitle: np.postTitle,
+    description: np.description,
   };
   postsDB
     .add(newPost)
     .then((post) => {
-      res.json({message: `${post.title} created successfully`});
+      res.json({message: `${post.id} created successfully`});
     })
     .catch((err) => {
       res.json({error: 'something bad happened...'});
