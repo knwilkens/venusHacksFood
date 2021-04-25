@@ -27,7 +27,7 @@ exports.makeOnePost = (req, res) => {
     receiveUser: '',
     comments: [],
     status: 'Incomplete',
-    postTitle: req.body.postTitle,
+    title: req.body.postTitle,
     description: req.body.description,
   };
   postsDB
