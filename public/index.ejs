@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<script>
+	console.log(localStorage.getItem('user'));
+	window.onload = function() {
+		document.getElementById("postUser").value = localStorage.getItem('user');
+	}
+</script>>
 <html>
   <head>
     <meta charset="utf-8">
@@ -44,6 +50,11 @@
     window.onload = () => {
       if (console.log(localStorage.getItem("user")) === null){
         window.location.replace("/log-in.html");
+      } else {
+        let window_url = (window.location.href).slice(0, -15);
+        console.log(window_url);
+        let my_posts_link = window_url + "/my-posts/" + localStorage.getItem('user');
+		    document.getElementById("myPostsLink").href = my_posts_link;
       }
       Feed.loadFeed();
     }
@@ -73,7 +84,7 @@
             <h1>Find and Reserve Food</h1>
           </div>
           <div class="my_posts_container">
-            <a>My Posts</a>
+            <a id="myPostsLink">My Posts</a>
           </div>
         </div>
 
