@@ -134,6 +134,7 @@ limitations under the License.
         document.getElementById('quickstart-verify-email').disabled = true;
         if (user) {
           // User is signed in.
+	  localStorage.setItem("user", user.uid);
           var displayName = user.displayName;
           var email = user.email;
           var emailVerified = user.emailVerified;
@@ -149,6 +150,7 @@ limitations under the License.
           }
         } else {
           // User is signed out.
+	  localStorage.setItem("user", null);
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
           document.getElementById('quickstart-account-details').textContent = 'null';
