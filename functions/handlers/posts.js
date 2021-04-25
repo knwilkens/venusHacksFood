@@ -1,6 +1,7 @@
 const { db } = require('../util/admin')
 const postsDB = db.collection('posts');
 
+
 exports.getAllPosts = (req, res) => {
   postsDB
     //.orderBy('createdAt', 'desc')  
@@ -24,8 +25,9 @@ exports.getAllPosts = (req, res) => {
 
 exports.makeOnePost = (req, res) => {
   console.log(req.body);
+  //console.log(localStorage.getItem('user'));
   const newPost = {
-    postUser: 'randomUser', // TODO: get user that's signed in ID
+    postUser: req.body.postUser,
     receiveUser: '',
     comments: [],
     status: 'Incomplete',

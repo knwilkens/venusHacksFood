@@ -1,8 +1,17 @@
 <!DOCTYPE html>
+<script>
+	console.log(localStorage.getItem('user'));
+	window.onload = function() {
+		document.getElementById("postUser").value = localStorage.getItem('user');
+	}
+</script>
+
+
 <html>
 	<body>
     <form method="post" action="http://localhost:5001/venushacksfood/us-central1/api/post">
 		<div class="main-form"> 
+			<input type="hidden" id="postUser" name="postUser">
  			<h1 id="cardInfo">Make Your Post</h1> 
     			Title: <input type="text" placeholder="Category: " name="postTitle"><br /><br /> 
     			Description: <input type="text" placeholder="Enter Text here..." name="description"> <br /><br /> 
