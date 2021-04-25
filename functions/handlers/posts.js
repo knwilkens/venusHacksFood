@@ -18,7 +18,7 @@ exports.getAllPosts = (req, res) => {
           status: doc.data().status
         });
       });
-      res.json(posts);
+      res.render('index', {posts: posts});
     })
     .catch(err => {
       res.status(500).json({error: err});
@@ -48,6 +48,29 @@ exports.getPosts = (req, res) => {
   .catch(err => {
     res.status(500).json({error: err});
   });
+}
+
+exports.getMyPosts = (req, res) => {
+  postsDB
+    .where('postUser', '==', req.params.user)
+    .get()
+    .then((myPosts) => {
+      let posts = [];
+      myPosts.forEach(doc => {
+        posts.push({
+          id: doc.id,
+          postUser: doc.data().postUser,
+          title: doc.data().title,
+          description: doc.data().description,
+          status: doc.data().status
+        })
+      });
+      res.render('my-posts', {posts: posts});
+    })
+    .catch(err => {
+      res.status(500).json({ error: "we couldn't fetch your posts..."});
+      console.log(err);
+    });
 }
 
 exports.updatePostStatusById = (req, res) => {
